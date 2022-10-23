@@ -87,13 +87,14 @@ const Home = () => {
 
     useEffect(() => {
         getData()
+        console.log(existingApplication);
         if (existingApplication) {
             console.log('dss')
             $('#newApp').attr("hidden", true)
             $('#newApp').attr("hidden", "hidden")
         }
     }, [])
-    console.log("ksjd", existingApplication)
+
     const handleChange = (e) => {
         setApplication({
             ...application,

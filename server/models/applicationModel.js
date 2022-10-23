@@ -47,7 +47,8 @@ const application = new mongoose.Schema({
         default: "Submitted"
     },
     userId: {
-        type: mongoose.Types.ObjectId
+        type: mongoose.Types.ObjectId,
+        ref: 'User'
     },
 
 

@@ -8,9 +8,9 @@ function adminLayout(props) {
         <Fragment>
             <Nav></Nav>
             <NavSidebar />
-            <h3 className="text-center mt-5">New Applications</h3>
 
-            <Applicationlist text="sdlkjf"></Applicationlist>
+
+            <Applicationlist ></Applicationlist>
         </Fragment>
     );
 }

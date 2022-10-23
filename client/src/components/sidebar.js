@@ -65,13 +65,13 @@ export const NavSidebar = () => {
                         },
                         {
                             title: "Home",
-                            itemId: "/home",
+                            // itemId: "/home",
                             // Optional
                             elemBefore: () => <Icon name="coffee" />
                         },
                         {
                             title: "Slot",
-                            itemId: "/home",
+                            // itemId: "/home",
                             // Optional
                             elemBefore: () => <Icon name="book" />
                         },
@@ -83,7 +83,7 @@ export const NavSidebar = () => {
                         },
                         {
                             title: "Home",
-                            itemId: "/home",
+                            // itemId: "/home",
                             // Optional
                             elemBefore: () => <Icon name="cloud-snow" />
                         }

@@ -15,10 +15,10 @@
 }
 .applist {
     margin-top: 0;
-    width: 70%;
-    margin-left: 18rem;
-    position: absolute;
-    margin-top: 8rem;
+    width: 55%;
+    margin-left: 25%;
+    /* position: absolute; */
+    margin-top: 2rem;
  
 }
 .Progress{
@@ -27,6 +27,13 @@
     /* display: flex; */
     /* justify-content: center; */
     margin-left: 15rem;
+}
+.card-body{
+height: 55px;
+/* background-color: rgb(194, 222, 223); */
+}
+.TableCell{
+    min-width: "";
 }
 .steptxt{
     margin-top: 4rem;
@@ -39,5 +46,15 @@
 }
 .logout-btn{
     margin-left: 1rem;
+}
+.Apptable{
+    width: 55% !important;
+    margin-right: 20%;
+    margin-left: 25%;
+
+
+}
+TableContainer{
+    width: 50% !important;
 }
  /* form{color: #000;overflow-x: hidden;height: 100%;background-image: url("https://i.imgur.com/GMmCQHC.png");background-repeat: no-repeat;background-size: 100% 100%}.card{padding: 30px 40px;margin-top: 60px;margin-bottom: 60px;border: none !important;box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2)}.blue-text{color: #00BCD4}.form-control-label{margin-bottom: 0}input, textarea, button{padding: 8px 15px;border-radius: 5px !important;margin: 5px 0px;box-sizing: border-box;border: 1px solid #ccc;font-size: 18px !important;font-weight: 300}input:focus, textarea:focus{-moz-box-shadow: none !important;-webkit-box-shadow: none !important;box-shadow: none !important;border: 1px solid #00BCD4;outline-width: 0;font-weight: 400}.btn-block{text-transform: uppercase;font-size: 15px !important;font-weight: 400;height: 43px;cursor: pointer}.btn-block:hover{color: #fff !important}button:focus{-moz-box-shadow: none !important;-webkit-box-shadow: none !important;box-shadow: none !important;outline-width: 0}  */
