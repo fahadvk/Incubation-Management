@@ -2,23 +2,40 @@
     margin: 0;
     padding: 0;
 }
-nav{
-    margin-top: 2rem     !important;
+.navClass{
+    margin-top: .5rem     !important;
     padding: 0 !important;
+  
 }
 .sideDiv{
-    margin-top: 5rem;
+    /* margin-top: 1rem; */
     width: 15%;
     height: 50%;
     position: fixed;
 }
-.card {
+.applist {
     margin-top: 0;
     width: 70%;
     margin-left: 18rem;
     position: absolute;
     margin-top: 8rem;
  
+}
+.Progress{
+    margin-top: 3rem;
+    width: 60%;
+    /* display: flex; */
+    /* justify-content: center; */
+    margin-left: 15rem;
+}
+.steptxt{
+    margin-top: 4rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+.last{
+    margin-top: 4rem;
+    margin-left: 25rem;
 }
 .logout-btn{
     margin-left: 1rem;

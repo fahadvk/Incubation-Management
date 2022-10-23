@@ -9,7 +9,7 @@ import LoginPage from './Pages/Login'
 import { useSelector } from 'react-redux';
 import ProtectedRoutes from './components/ProtectedRoutes';
 import PublicRoutes from './components/PublicRoutes';
-
+import { adminProtectedRoutes as adminauth } from './components/adminRoutes';
 
 
 function App() {
@@ -31,6 +31,7 @@ function App() {
           <Route path="/signup" element={<PublicRoutes> <SignupPage /> </PublicRoutes>} />
 
           <Route path="/login" element={<PublicRoutes><LoginPage /></PublicRoutes>} />
+          {/* <Route path='/slot' element={<adminauth><SlotPage /></adminauth>} /> */}
 
         </Routes>
       </Router>

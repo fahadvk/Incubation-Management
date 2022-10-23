@@ -10,3 +10,6 @@ export const getData = async (req, res, next) => {
     }
 
 }
+export const sendauth = (req, res) => {
+    res.json(201).send({ success: true, isadmin: true })
+}

@@ -9,7 +9,8 @@ export const getHome = async (req, res, next) => {
             return res.status(401).send({ message: "user not found", success: false })
         }
         else {
-            res.status(200).send({ message: "user found", success: true, data: user })
+            const Applications = await Application.findOne({ userId: req.body.userid })
+            res.status(200).send({ message: "user found", success: true, data: user, Applications })
         }
     } catch (error) {
         res.status(500).send({ message: "failed" })

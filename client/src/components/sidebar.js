@@ -35,25 +35,20 @@ export const NavSidebar = () => {
                     activeItemId={location.pathname}
                     onSelect={({ itemId }) => {
                         // history.push(itemId);
-                        if (itemId === "/logout") {
-                            localStorage.clear()
-                            Navigate(`/login`)
-                        }
-                        else {
-                            Navigate(`${itemId}`)
-                        }
+                        Navigate(`${itemId}`)
+
                     }}
                     items={[
                         {
                             title: "Home",
                             itemId: "/home",
                             // Optional
-                            elemBefore: () => <Icon name="coffee" />
+                            elemBefore: () => <Icon name="smartphone" />
                         },
                         {
                             title: "Applications",
                             itemId: "/applications",
-                            elemBefore: () => <Icon name="user" />,
+                            elemBefore: () => <Icon name="activity" />,
                             subNav: [
                                 {
                                     title: "",
@@ -69,11 +64,35 @@ export const NavSidebar = () => {
                             ]
                         },
                         {
-                            title: "logout",
-                            itemId: "/logout",
-
-
+                            title: "Home",
+                            itemId: "/home",
+                            // Optional
+                            elemBefore: () => <Icon name="coffee" />
+                        },
+                        {
+                            title: "Slot",
+                            itemId: "/home",
+                            // Optional
+                            elemBefore: () => <Icon name="book" />
+                        },
+                        {
+                            title: "User",
+                            itemId: "/user",
+                            // Optional
+                            elemBefore: () => <Icon name="user" />
+                        },
+                        {
+                            title: "Home",
+                            itemId: "/home",
+                            // Optional
+                            elemBefore: () => <Icon name="cloud-snow" />
                         }
+                        // {
+                        //     title: "logout",
+                        //     itemId: "/logout",
+
+
+                        // }
                         // {
                         //     title: "Another Tab",
                         //     itemId: "/another",
