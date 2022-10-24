@@ -53,7 +53,6 @@ export const Applicationlist = (props) => {
 
     const [open, setOpen] = React.useState(false);
     const triggermodal = (e) => {
-
         let index = e.target.value
         setSelected(Apps[index])
         handleOpen()
@@ -62,12 +61,12 @@ export const Applicationlist = (props) => {
         setOpen(true);
     }
     const handleClose = () => setOpen(false);
-    const AcceptApplication = async (e) => {
+    const ApproveApplication = async (e) => {
         let id = e.target.value
 
         try {
 
-            const response = await axios.get(`/api/admin/acceptApplication/${id}`, {
+            const response = await axios.put(`/api/admin/approveApplication/${id}`, {}, {
                 headers: {
 
                     authorization: 'Bearer ' + localStorage.getItem('token')
@@ -75,7 +74,7 @@ export const Applicationlist = (props) => {
                 }
             })
             if (response.data.success) {
-                swal.fire("success", "application on pending", "success")
+                swal.fire("success", "application Approved", "success")
                 setOpen(false)
             }
         } catch (error) {
@@ -83,12 +82,26 @@ export const Applicationlist = (props) => {
         }
 
     }
+    const cancelApplication = async (e) => {
+        let id = e.target.value
+        try {
+            const response = await axios.put(`/api/admin/cancelApplication/${id}`, {}, {
+                headers: {
+
+                    authorization: 'Bearer ' + localStorage.getItem('token')
+
+                }
+            })
+        } catch (error) {
+
+        }
+    }
 
     return (
         <>
             <React.Fragment>
                 <div class="applist">
-                    <h3 className=" card-header text-center mt-5">New Applications</h3>
+                    <h3 className=" card-header text-center mt-5">Applications</h3>
 
                 </div>
             </React.Fragment>
@@ -117,7 +130,7 @@ export const Applicationlist = (props) => {
                                 <TableCell align="">{row.userId.Name}</TableCell>
                                 <TableCell align="">{date(row.createdAt)}</TableCell>
                                 <TableCell align=""><a className='btn'> view</a></TableCell>
-                                <Button onClick={triggermodal} value={index}>Open modal</Button>
+                                <Button className='mt-3' onClick={triggermodal} value={index}>Open modal</Button>
                             </TableRow>
                         ))}
                     </TableBody>
@@ -174,8 +187,8 @@ export const Applicationlist = (props) => {
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                             user :  {selectedApp?.userId?.Name}
                         </Typography>
-                        <Button onClick={AcceptApplication} color='success' value={selectedApp?._id}> Accept</Button>
-                        <Button color="error">Reject</Button>
+                        <Button onClick={ApproveApplication} color='success' value={selectedApp?._id}> Approve</Button>
+                        <Button onClick={cancelApplication} value={selectedApp?._id} color="error">Reject</Button>
 
                     </Box>
                 </Modal>

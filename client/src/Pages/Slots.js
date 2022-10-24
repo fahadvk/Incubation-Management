@@ -1,11 +1,16 @@
-import React from 'react';
+
+
+
+import React from "react";
+import SlotPage from '../components/SlotPage'
 
 function Slots(props) {
-    return (
-        <div>
-            <h2>dsljpojsrlf</h2>
-        </div>
-    );
-}
 
-export default Slots;
+    return (
+        <>
+            <SlotPage></SlotPage>
+        </>
+    )
+}
+export default Slots
+

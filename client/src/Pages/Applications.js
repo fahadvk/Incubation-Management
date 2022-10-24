@@ -1,10 +1,14 @@
 
-import Applicationlist from '../components/Home/applicationlist';
-
+import Applicationlist from '../components/applicationlist';
+import { NavSidebar } from '../components/Home/sidebar';
+import Nav from "../components/Home/navbar"
 const Applications = () => {
 
     return (
         <div>
+            <Nav></Nav>
+            <NavSidebar></NavSidebar>
+
             <Applicationlist></Applicationlist>
         </div>
     );

@@ -6,10 +6,16 @@ const Slotschema = new mongoose.Schema({
     company: {
         type: String
     },
+    application: {
+        type: mongoose.Types.ObjectId,
+        ref: "Application"
+    },
     status: {
-
+        type: Boolean,
+        default: false
     },
 
+
 })
-const Slot = mongoose.Model('Slot', Slotschema)
+const Slot = mongoose.model('Slot', Slotschema)
 export default Slot

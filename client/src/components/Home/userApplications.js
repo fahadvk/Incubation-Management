@@ -11,24 +11,9 @@ import StepLabel from '@mui/material/StepLabel';
 
 
 const UserApplications = (props) => {
-    // const getData = async () => {
-    //     try {
-    //         const response = await axios.get("/api/user/getuserApplications", {
-    //             headers:
-    //             {
-    //                 authorization: 'Bearer ' + localStorage.getItem('token')
-    //             }
-    //         })
-    //         console.log(response)
-    //     } catch (error) {
 
-    //     }
-    // }
     console.log("thisisfrom", props.application)
-    // useEffect(() => {
 
-    //     getData()
-    // }, [])
     const status = props.application?.status
 
     const steps = [
