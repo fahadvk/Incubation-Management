@@ -8,7 +8,7 @@ import $, { get } from "jquery"
 import 'bootstrap'
 import "./home.css"
 import Nav from "./navbar"
-import UserApplications from "../userApplications";
+import UserApplications from "./userApplications";
 
 const Home = () => {
     const dispatch = useDispatch()

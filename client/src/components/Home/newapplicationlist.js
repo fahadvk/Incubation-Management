@@ -132,7 +132,7 @@ export const Applicationlist = (props) => {
                                 <TableCell align="">{row.userId.Name}</TableCell>
                                 <TableCell align="">{date(row.createdAt)}</TableCell>
                                 <TableCell align=""><a className='btn'> view</a></TableCell>
-                                <Button onClick={triggermodal} value={index}>Open modal</Button>
+                                <Button onClick={triggermodal} value={index}>View</Button>
                             </TableRow>
                         ))}
                     </TableBody>

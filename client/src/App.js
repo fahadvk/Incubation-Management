@@ -1,16 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
-import 'antd/dist/antd.css'
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { Button } from 'antd'
+
 import Home from './Pages/Home';
 import SignupPage from './Pages/Signup';
 import LoginPage from './Pages/Login'
 import { useSelector } from 'react-redux';
 import ProtectedRoutes from './components/ProtectedRoutes';
 import PublicRoutes from './components/PublicRoutes';
-import { adminProtectedRoutes as adminauth } from './components/adminRoutes';
-
+import Adminauth from './components/adminRoutes';
+import Application from './Pages/Applications'
+import Slots from './Pages/Slots';
 
 function App() {
   const { loading } = useSelector(state => state.alerts)
@@ -31,7 +32,8 @@ function App() {
           <Route path="/signup" element={<PublicRoutes> <SignupPage /> </PublicRoutes>} />
 
           <Route path="/login" element={<PublicRoutes><LoginPage /></PublicRoutes>} />
-          {/* <Route path='/slot' element={<adminauth><SlotPage /></adminauth>} /> */}
+          <Route path='/slot' element={<Adminauth><Slots /> </Adminauth>} />
+          <Route exact path='/applications' element={<Adminauth><Application /></Adminauth>}></Route>
 
         </Routes>
       </Router>

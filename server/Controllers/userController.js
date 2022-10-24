@@ -46,6 +46,7 @@ export const newApplication = async (req, res, next) => {
     try {
 
         let createdApplication = await Application.create(newForm)
+        res.status(200).send("success")
     } catch (error) {
         res.status(500).send(error)
     }
