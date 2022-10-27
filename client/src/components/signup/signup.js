@@ -6,12 +6,14 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
+import { Navigate, useNavigate } from "react-router-dom";
 
 
 const Signup = () => {
   // const style = {
   //   margin: "15px 0"
   // };
+  const Navigate = useNavigate()
   const initialFormData = Object.freeze({
     Name: "",
     email: "",
@@ -57,8 +59,8 @@ const Signup = () => {
       const response = await axios.post("/api/user/register", formData)
       if (response.data.success) {
 
-        // toast.success(response.data.message)
-
+        toast.success(response.data.message)
+        Navigate("/")
       } else {
 
         let errors = []

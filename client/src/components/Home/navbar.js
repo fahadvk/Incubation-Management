@@ -38,5 +38,5 @@ export default function ButtonAppBar(props) {
                 </Toolbar>
             </AppBar>
         </Box>
-    );
+    )
 }

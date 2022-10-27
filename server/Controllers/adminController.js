@@ -67,14 +67,6 @@ export const createSlots = async (req, res, next) => {
 }
 export const getSlots = async (req, res, next) => {
     try {
-        // let slot = new Slot({
-
-        // }).save()
-
-
-
-
-
         const Slots = await Slot.find({})
         res.status(200).send(Slots)
     } catch (error) {
@@ -104,5 +96,17 @@ export const slotconfirm = async (req, res) => {
         res.status(201).send("success")
     } catch (error) {
         console.log(error)
+    }
+}
+export const addSlot = async (req, res) => {
+    try {
+        const slot = new Slot({
+        })
+        await slot.save()
+
+        res.status(201).send("created")
+    } catch (error) {
+
+        res.status(500).send('failed')
     }
 }

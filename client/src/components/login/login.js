@@ -140,6 +140,7 @@ const LoginContainer = () => {
       <div className="button login-button" onClick={ClickHandler}>
         log in
       </div>
+      <a onClick={() => { navigate("/signup") }}>New User please signup</a>
       <ToastContainer hideProgressBar autoClose={2000} limit={3} />
       {/* <Button buttonText="log in" buttonClass="login-button" /> */}
     </div>

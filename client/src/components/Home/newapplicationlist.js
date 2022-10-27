@@ -92,7 +92,26 @@ export const Applicationlist = (props) => {
         }
 
     }
+    const CancelApplication = async (e) => {
+        let id = e.target.value
+        try {
+            const response = await axios.put(`/api/admin/cancelApplication/${id}`, {}, {
+                headers: {
 
+                    authorization: 'Bearer ' + localStorage.getItem('token')
+
+                }
+            })
+            if (response.data.success) {
+                swal.fire("success", "application on pending", "success")
+                setOpen(false)
+            }
+        } catch (error) {
+
+        }
+
+
+    }
     return (
         <>
             <React.Fragment>
@@ -131,7 +150,7 @@ export const Applicationlist = (props) => {
                                 <TableCell align=''>{row.CompanyName}</TableCell>
                                 <TableCell align="">{row.userId.Name}</TableCell>
                                 <TableCell align="">{date(row.createdAt)}</TableCell>
-                                <TableCell align=""><a className='btn'> view</a></TableCell>
+                                {/* <TableCell align=""><a className='btn'> view</a></TableCell> */}
                                 <Button className='mt-3' onClick={triggermodal} value={index}>View</Button>
                             </TableRow>
                         ))}
@@ -190,7 +209,7 @@ export const Applicationlist = (props) => {
                             user :  {selectedApp?.userId?.Name}
                         </Typography>
                         <Button onClick={AcceptApplication} color='success' value={selectedApp?._id}> Accept</Button>
-                        <Button color="error">Reject</Button>
+                        <Button onClick={CancelApplication} color="error" value={selectedApp?._id} >Reject</Button>
 
                     </Box>
                 </Modal>

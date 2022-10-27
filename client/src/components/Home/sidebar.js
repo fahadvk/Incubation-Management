@@ -14,12 +14,7 @@ export const NavSidebar = () => {
 
     return (
         <React.Fragment>
-            {/* Sidebar Overlay */}
 
-
-
-
-            {/* Sidebar */}
             <div className="sideDiv"
 
             >

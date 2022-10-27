@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-
+import Typography from '@mui/material/Typography';
 
 const UserApplications = (props) => {
 
@@ -23,13 +23,19 @@ const UserApplications = (props) => {
         'Slot Confirmed',
     ];
     let stat = steps.indexOf(status)
-    console.log(stat)
+
 
     return (
         <React.Fragment>
             <h2 className='text-center mt-5'> Your Applications </h2>
 
+            {(status === "Cancelled")
+                && <>
 
+                    <Typography className='text-center mt-5' color='error' >Your Application {props?.application?._id} has been cancelled by admin </Typography>
+
+                </>
+            }
 
             <div className='Progress container '>
 
@@ -42,6 +48,8 @@ const UserApplications = (props) => {
                         ))}
                     </Stepper>
                 </Box>
+
+                {(stat === 3 && <p className='ms-5 mt-5 text-center'> your application  has successfully completed slot booking </p>)}
 
             </div>
         </React.Fragment>

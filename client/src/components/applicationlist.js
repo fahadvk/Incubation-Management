@@ -101,7 +101,7 @@ export const Applicationlist = (props) => {
         <>
             <React.Fragment>
                 <div class="applist">
-                    <h3 className=" card-header text-center mt-5">Applications</h3>
+                    <h3 className=" card-header text-center mt-5">Pending Applications</h3>
 
                 </div>
             </React.Fragment>
@@ -129,8 +129,8 @@ export const Applicationlist = (props) => {
                                 <TableCell align=''>{row.CompanyName}</TableCell>
                                 <TableCell align="">{row.userId.Name}</TableCell>
                                 <TableCell align="">{date(row.createdAt)}</TableCell>
-                                <TableCell align=""><a className='btn'> view</a></TableCell>
-                                <Button className='mt-3' onClick={triggermodal} value={index}>Open modal</Button>
+                                {/* <TableCell align=""><a className='btn'> view</a></TableCell> */}
+                                <Button className='mt-3' onClick={triggermodal} value={index}>View</Button>
                             </TableRow>
                         ))}
                     </TableBody>

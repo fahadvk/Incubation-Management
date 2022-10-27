@@ -87,12 +87,7 @@ const Home = () => {
 
     useEffect(() => {
         getData()
-        console.log(existingApplication);
-        if (existingApplication) {
-            console.log('dss')
-            $('#newApp').attr("hidden", true)
-            $('#newApp').attr("hidden", "hidden")
-        }
+
     }, [])
 
     const handleChange = (e) => {
@@ -123,6 +118,7 @@ const Home = () => {
                     }
                 })
             $('#modalSubscriptionForm').modal('hide');
+            getData()
         } catch (error) {
             console.log(error)
         }
@@ -145,10 +141,7 @@ const Home = () => {
                     <nav class="navbar bg-primary">
                         <div class="container-fluid navClass">
                             <a class="navbar-brand text-dark">Incubation Program</a>
-                            {/* <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> */}
+
                             <section className="ftco-section">
                                 <div className="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                                     aria-hidden="true">
@@ -255,7 +248,7 @@ const Home = () => {
                                 <div className="container">
                                     <div className="row ">
 
-                                        <button id="newApp" className='d-flex align-items-center btn btn-info' data-toggle="modal" data-target="#modalSubscriptionForm">Apply</button>
+                                        {(!existingApplication) && <button id="newApp" className='d-flex align-items-center btn btn-info' data-toggle="modal" data-target="#modalSubscriptionForm">Apply</button>}
 
                                         <button onClick={logout} className='logout-btn d-flex align-items-center btn btn-danger' data-toggle="" data-target="">logout</button>
                                     </div>
