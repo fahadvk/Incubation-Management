@@ -6,6 +6,9 @@ const Slotschema = new mongoose.Schema({
     company: {
         type: String
     },
+    name: {
+        type: String
+    },
     application: {
         type: mongoose.Types.ObjectId,
         ref: "Application"

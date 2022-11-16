@@ -32,7 +32,7 @@ function SlotPage(props) {
                 }
             })
             getSlots()
-            // location.reload()
+
 
         } catch (error) {
             console.log(error)
@@ -50,7 +50,7 @@ function SlotPage(props) {
         <NavSidebar></NavSidebar>
 
         <h2 className='text-center mt-4'>Slot Booking</h2>
-        <div className='row justify-content-center mt-5'>
+        <div style={{ 'width': '70%', 'marginLeft': '12rem', }} className='d-flex justify-content-center ms-5  mt-5 flex-wrap'>
             {slots.map((slot, index) => {
                 return (<>
                     <Box slot={slot} key={index} />

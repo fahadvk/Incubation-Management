@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import Application from "../models/applicationModel.js";
 import Slot from "../models/slots.js";
+import { randomBytes } from 'crypto'
 export const getData = async (req, res, next) => {
     try {
         let getAll = await Application.find({}).sort({ createdAt: -1 })
@@ -100,7 +101,9 @@ export const slotconfirm = async (req, res) => {
 }
 export const addSlot = async (req, res) => {
     try {
+        const rand = randomBytes(1).toString('hex')
         const slot = new Slot({
+            name: rand
         })
         await slot.save()
 

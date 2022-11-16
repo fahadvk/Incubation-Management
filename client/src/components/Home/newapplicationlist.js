@@ -86,6 +86,7 @@ export const Applicationlist = (props) => {
             if (response.data.success) {
                 swal.fire("success", "application on pending", "success")
                 setOpen(false)
+                getnewApps()
             }
         } catch (error) {
 
@@ -105,6 +106,7 @@ export const Applicationlist = (props) => {
             if (response.data.success) {
                 swal.fire("success", "application on pending", "success")
                 setOpen(false)
+                getnewApps()
             }
         } catch (error) {
 

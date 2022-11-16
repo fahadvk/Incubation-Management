@@ -127,8 +127,9 @@ export default function CustomizedButtons(props) {
 
     return (
         <>
-            <Stack spacing={2} direction="row">
-                <ColorButton onClick={handleClickOpen} disabled={props.slot?.status} id={props.slot._id} variant="contained"></ColorButton>
+            <Stack spacing={2} direction="row" className='mt-4'>
+                <ColorButton onClick={handleClickOpen} disabled={props.slot?.status} id={props.slot._id} variant="contained">{props.slot.name}</ColorButton>
+
             </Stack>
             <SimpleDialog
                 selectedValue={selectedValue}

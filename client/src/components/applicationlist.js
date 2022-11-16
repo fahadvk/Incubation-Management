@@ -76,6 +76,7 @@ export const Applicationlist = (props) => {
             if (response.data.success) {
                 swal.fire("success", "application Approved", "success")
                 setOpen(false)
+                getApps()
             }
         } catch (error) {
 
@@ -91,7 +92,9 @@ export const Applicationlist = (props) => {
                     authorization: 'Bearer ' + localStorage.getItem('token')
 
                 }
+
             })
+            getApps()
         } catch (error) {
 
         }
