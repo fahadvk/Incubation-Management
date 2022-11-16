@@ -73,8 +73,6 @@ function SimpleDialog(props) {
                             <ListItemText primary={data?.CompanyName} />
                         </ListItem>
                     ))}
-
-
                 </List>
             </Dialog >
         </>
